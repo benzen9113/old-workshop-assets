@@ -1,0 +1,28 @@
+<% include header %>
+	<div id="photos">
+		<% photos.forEach((photo) => { %>
+			<div class='col-xs-3' style="margin-top:25px">
+        <img class="img-rounded img-responsive" src="<%=photo.small%>" medium-src="<%=photo.medium%>" style="cursor:pointer" />
+        <img src="<%=photo.medium%>" style="display:none" />
+        <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;"><small><%=photo.title%></small></p>
+      </div>
+		<% }) %>
+	</div>
+	
+<img id="hiddenImg" class="img-rounded img-responsive" style="box-shadow: 2px 2px 10px #555; position:fixed; left:20; bottom:20; cursor:pointer" />
+<script>
+var hiddenImg = document.getElementById("hiddenImg");
+hiddenImg.addEventListener("click", function(){
+	hiddenImg.style.display = "none";
+});
+
+var photosContainer = document.getElementById('photos');
+photosContainer.addEventListener("click", function(e){
+	if (e.target.tagName == "IMG") {
+		hiddenImg.src = e.target.attributes["medium-src"].value;
+		hiddenImg.style.display = "block";
+	}
+});
+</script>
+
+<% include footer %>

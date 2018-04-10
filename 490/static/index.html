@@ -1,0 +1,100 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SPA DEMO</title>
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+</html>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <span class="glyphicon glyphicon-th-list"></span> Contacts
+      </a>
+    </div>
+    <form class="navbar-form navbar-right">
+      <div class="form-group">
+        <input type="text" class="form-control" data-app="search" placeholder="Search">
+      </div>
+    </form>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <!-- form section -->
+    <div class="col-sm-6">
+
+      <!-- form panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-app="form-title">Add Contacts</div>
+
+        <div class="panel-body">
+          <form class="form-horizontal" data-app="form">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                <input type="name" class="form-control" data-app="form-name" placeholder="Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" data-app="form-phone" placeholder="Phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" data-app="form-email" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" data-app="form-submit">Save</button>
+                <button type="button" class="btn btn-warning" data-app="form-cancel">Cancel</button>
+                <button type="button" class="btn btn-danger" data-app="form-remove"><span class="glyphicon glyphicon-trash"></span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- form error -->
+      <div class="alert alert-danger" data-app="form-error">
+        Error...
+      </div>
+    </div>
+    <!-- list section -->
+    <div class="col-sm-6">
+
+      <!-- list group -->
+      <div class="list-group" data-app="list">
+        <a href="#" class="list-group-item" data-app="list-item-template">
+          <h4 class="list-group-item-heading" data-app="list-item-name">Name</h4>
+          <p class="list-group-item-text">
+            <span class="glyphicon glyphicon-earphone"></span> Phone: <span data-app="list-item-phone">010-1234-1234</span><br>
+            <span class="glyphicon glyphicon-envelope"></span> Email: <span data-app="list-item-email">abc@def.com</span>
+          </p>
+        </a>
+      </div>
+
+      <!-- list loading -->
+      <div class="alert alert-info" data-app="list-loading">
+        Loading Contacts...
+      </div>
+
+      <!-- list empty -->
+      <div class="alert alert-info" data-app="list-empty">
+        Empty Contacts...
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

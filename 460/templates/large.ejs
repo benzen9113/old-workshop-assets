@@ -1,0 +1,12 @@
+<% include header %>
+
+	<div id="photos">
+		<% photos.forEach((photo) => { %>
+			<div class='col-xs-6' style="margin-top:25px">
+        <img class="img-rounded img-responsive" src="<%=photo.medium%>" />
+        <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;"><small><%=photo.title%></small></p>
+      </div>
+		<% }) %>
+	</div>
+
+<% include footer %>

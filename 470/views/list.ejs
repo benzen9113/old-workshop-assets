@@ -1,0 +1,48 @@
+<% include common/header %>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <p class="navbar-text"><%=user.uid%>님 안녕하세요.</p>
+    <a href="/user/logout" type="button" class="btn btn-default navbar-btn navbar-right">로그아웃</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- 입력을 나타내는 행-->
+  <div class="row" style="margin-bottom:20px">
+    <form name="todo" class="input-group" action="/list" method="post">
+      <input name="item" type="text" class="form-control" placeholder="할 일 등록">
+      <span class="input-group-btn">
+        <input class="btn btn-primary" type="submit" value="추가하기">
+      </span>
+    </form>
+  </div>
+  <!-- 행 종료-->
+
+  <!-- 리스트를 보여주는 행-->
+  <div class="row"> 
+    <div class="list-group clearfix">
+      <% list.forEach((item,idx) =>{%>
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-file"></span> 
+        <%=item%>
+
+        <!-- 지우는 아이콘 -->
+        <a href="/list/delete?index=<%=idx%>" class="btn btn-xs btn-warning pull-right">
+         <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </div>
+      <% });%>
+    </div>
+
+  </div>
+  <!-- 행 종료-->
+
+</div>
+
+<script>
+document.forms.todo.item.focus();
+</script>
+
+<% include common/footer %>
